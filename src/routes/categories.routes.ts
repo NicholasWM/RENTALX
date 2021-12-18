@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { CategoriesRepository } from "../repositories/CategoriesRepository";
+import { CategoriesRepository } from "../modules/cars/repositories/CategoriesRepository";
+import { CreateCategoriesService } from "../services/CreateCategoryService";
 
 const categoriesRoutes = Router()
 const categoriesRepository = new CategoriesRepository
@@ -11,11 +12,8 @@ categoriesRoutes.get('/', (req, res)=>{
 
 categoriesRoutes.post('/', (req, res)=>{
     const {name, description} = req.body
-    const categoryAlreadyExists = categoriesRepository.findByName(name)
-    if(categoryAlreadyExists){
-        return res.status(400).json({error: 'Category already exists'})
-    }
-    categoriesRepository.create({name, description})
+    const createCategoryService = new CreateCategoriesService(categoriesRepository)
+    createCategoryService.execute({name, description})
     return res.status(201).send()
 });
 
