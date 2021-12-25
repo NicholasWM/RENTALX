@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { SpecificationRepository } from "../modules/cars/repositories/implementations/SpecificationRepository";
-import { CreateSpecificationService } from "../modules/cars/services/CreateSpecificationService";
-import { createSpecificationController } from "../modules/cars/useCases/createSpecification";
-import { CreateSpecificationController } from "../modules/cars/useCases/createSpecification/CreateSpecificationController";
-import { listSpecificationsController } from "../modules/cars/useCases/listSpecifications";
+import { SpecificationRepository } from "../entities/cars/repositories/implementations/SpecificationRepository";
+import { CreateSpecificationService } from "../entities/cars/services/CreateSpecificationService";
+import { createSpecificationController } from "../entities/cars/useCases/createSpecification";
+import { CreateSpecificationController } from "../entities/cars/useCases/createSpecification/CreateSpecificationController";
+import { listSpecificationsController } from "../entities/cars/useCases/listSpecifications";
 
 const specificationsRoutes = Router()
 
