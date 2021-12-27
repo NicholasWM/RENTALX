@@ -1,7 +1,7 @@
 import {v4 as uuidV4} from 'uuid'
 import {Column, CreateDateColumn, Entity, PrimaryColumn} from 'typeorm'
 
-@Entity('categories')
+@Entity('Categories')
 class Category {
 
     @PrimaryColumn()

@@ -3,7 +3,7 @@ import {UseCase} from './UseCase'
 import {CategoriesRepository as Repository} from '../../repositories/implementations/CategoriesRepository'
 
 
-// const categoriesRepository = Repository.getInstance()
+// const categoriesRepository = new Repository()
 const categoriesRepository = null
 const importCategoryUseCase = new UseCase(categoriesRepository)
 const importCategorysController = new Controller(importCategoryUseCase)

@@ -5,7 +5,7 @@ import { getRepository, Repository } from 'typeorm'
 class CategoriesRepository implements ICategoriesRepository {
     private repository: Repository<Category>
     private static INSTANCE: CategoriesRepository
-    private constructor() {
+    constructor() {
         this.repository = getRepository(Category)
     }
 
