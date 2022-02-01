@@ -6,9 +6,9 @@ interface ICreateSpecificationsRepository{
 }
 
 interface ISpecificationsRepository {
-    findByName(name: string): Specification,
-    create({name, description}:ICreateSpecificationsRepository): void,
-    list(): Specification[],
+    findByName(name: string): Promise<Specification>,
+    create({name, description}:ICreateSpecificationsRepository): Promise<void>,
+    list(): Promise<Specification[]>,
 }
 
 export { ICreateSpecificationsRepository, ISpecificationsRepository }
