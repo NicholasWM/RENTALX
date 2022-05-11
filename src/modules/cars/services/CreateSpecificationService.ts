@@ -1,5 +1,5 @@
-import { AppError } from "../../../errors/AppError";
-import { SpecificationRepository } from "../repositories/implementations/SpecificationRepository";
+import { AppError } from "../../../shared/errors/AppError";
+import { SpecificationRepository } from "../infra/typeorm/repositories/SpecificationRepository";
 interface IRequest {
     name: string,
     description: string,
